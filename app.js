@@ -48,6 +48,8 @@ $(document).ready(function() {
     
     $("#question_wrapper").on("click", "#retry_button", function () {
         numberCorrect = 0;
+        currentQuestion = 0;
+        
         var newQuestion = '<span class="question">'+questions[currentQuestion].question+'</span><br><div id="answer_holder"><input type="radio" name="option" class="option" value="0"><span class="answer">'+questions[currentQuestion].choices[0]+'</span><br><input type="radio" name="option" class="option" value="1"><span class="answer">'+questions[currentQuestion].choices[1]+'</span><br><input type="radio" name="option" class="option" value="2"><span class="answer">'+questions[currentQuestion].choices[2]+'</span><br><input type="radio" name="option" class="option" value="3"><span class="answer">'+questions[currentQuestion].choices[3]+'</span><br></div><div id="button_holder"><input type="button" id="submit" value="submit"><span id="hint"></span><input type="button" id="retry_button" value="again!"></div>';
         $("#question_wrapper").html(newQuestion);
         $("#last_question_fact").html("");
