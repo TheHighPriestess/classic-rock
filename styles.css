@@ -1,0 +1,213 @@
+/*Reset*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)*/
+
+html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,b, u, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+body {
+	font-family: sans-serif;
+	line-height: 1;
+}
+/*fonts*/
+@font-face {
+	font-family: CoffeeHouse;
+	src: url('CoffeeHouse.ttf');
+}
+/*layout*/
+html {
+	background-image:url('classicrockquiz.jpg');
+	background-size: auto 768px;
+	background-repeat: no-repeat;
+	background-position: top center;
+	margin-top: 30px;
+}
+/*elements*/
+h1 {
+	font-family: 'Exo', sans-serif;
+	font-size: 100px;
+	text-align:center;
+	color: #fff;
+	margin-top: 150px;	
+}
+
+h2 {
+
+	font-family: 'Gochi Hand', cursive;
+	font-size: 70px;
+	color: red;
+	position: absolute;
+	right: 520px;
+	top: 65px;
+	transform: rotate(-15deg);
+}
+
+#quiz_title {
+	position: relative;
+}
+
+#question_wrapper {
+	width: 400px;
+	height: 400px;
+	margin: 0 auto;
+	font-family: 'Oswald', sans-serif;
+	color: #EBEAE8;
+	font-size: 20px;
+	padding-top: 70px;
+	line-height: 30px;
+}
+#answer_holder {
+	display: inline-block;
+	margin-top: 20px;
+	line-height: 35px;
+}
+
+#button_holder {
+
+	/*margin-left: 50px;*/
+}
+
+#submit {
+
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #f24537), color-stop(1, #c62d1f) );
+	background:-moz-linear-gradient( center top, #f24537 5%, #c62d1f 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f24537', endColorstr='#c62d1f');
+	background-color:#f24537;
+	-webkit-border-top-left-radius:6px;
+	-moz-border-radius-topleft:6px;
+	border-top-left-radius:6px;
+	-webkit-border-top-right-radius:6px;
+	-moz-border-radius-topright:6px;
+	border-top-right-radius:6px;
+	-webkit-border-bottom-right-radius:6px;
+	-moz-border-radius-bottomright:6px;
+	border-bottom-right-radius:6px;
+	-webkit-border-bottom-left-radius:6px;
+	-moz-border-radius-bottomleft:6px;
+	border-bottom-left-radius:6px;
+	text-indent:0px;
+	border:1px solid #d02718;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:19px;
+	font-weight:bold;
+	font-style:normal;
+	height:38px;
+	line-height:38px;
+	width:100px;
+	text-decoration:none;
+	text-align:center;
+	margin-top: 25px;
+
+}
+
+#retry_button{
+
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #f24537), color-stop(1, #c62d1f) );
+	background:-moz-linear-gradient( center top, #f24537 5%, #c62d1f 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f24537', endColorstr='#c62d1f');
+	background-color:#f24537;
+	-webkit-border-top-left-radius:6px;
+	-moz-border-radius-topleft:6px;
+	border-top-left-radius:6px;
+	-webkit-border-top-right-radius:6px;
+	-moz-border-radius-topright:6px;
+	border-top-right-radius:6px;
+	-webkit-border-bottom-right-radius:6px;
+	-moz-border-radius-bottomright:6px;
+	border-bottom-right-radius:6px;
+	-webkit-border-bottom-left-radius:6px;
+	-moz-border-radius-bottomleft:6px;
+	border-bottom-left-radius:6px;
+	text-indent:0px;
+	border:1px solid #d02718;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:19px;
+	font-weight:bold;
+	font-style:normal;
+	height:38px;
+	line-height:38px;
+	width:100px;
+	text-decoration:none;
+	text-align:center;
+	margin-top: 25px;
+
+	
+	/*font-size: 18px;
+	margin-top: 20px;
+	border-radius: 5px;*/
+	display: none;
+}
+#bottom {
+	text-align: center;
+	whites-space:nowrap;
+}
+#score_holder {
+	width: 75%;
+	display: inline-block;
+	margin-right: 200px;
+}
+#question_score {
+	display: inline-block;
+}
+.score_cup {
+	display: none;
+	height: 175px;
+	margin-bottom: 20px;
+}
+#score_cup0 {
+	display: inline-block;
+}
+#fact_holder {
+	display: inline-block;
+	font-family: 'Oswald', sans-serif;
+	font-size: 20px;
+	text-align:center;
+	color: #360000;
+	width: 600px;
+	vertical-align:top;
+	margin-left: 30px;
+	margin-top: 70px;
+	line-height: 30px;
+}
+#final {
+	font-size: 30px;
+	line-spacing: 35px;
+}

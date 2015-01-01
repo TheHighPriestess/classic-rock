@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Classic Rock Quiz</title>
+		<link rel="stylesheet" href="styles.css">
+		<link href='http://fonts.googleapis.com/css?family=Gochi+Hand|Exo:900' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+		<script src="app.js"></script>
+	</head>
+	<body>
+		<div id="quiz_title">
+			<h1>Classic <span style="color:#c2c2c2">Rock</span></h1>
+			<h2>Quiz</h2>
+		</div>
+	
+		<div id="question_wrapper">
+			<span class="question">Question #1: Who wrote the original version of the song "Hurt"?</span><br>
+			<div id="answer_holder">
+				<input type="radio" name="option" class="option" value="0"><span class="answer"></span>Trent Reznor<br>
+				<input type="radio" name="option" class="option" value="1"><span class="answer">Johnny Cash</span><br>
+				<input type="radio" name="option" class="option" value="2"><span class="answer">Leona Lewis</span><br>
+				<input type="radio" name="option" class="option" value="3"><span class="answer">David Gahan</span><br>
+			</div>
+			<div id="button_holder">
+				<input type="button" id="submit" value="submit"><span id="hint"></span>
+				<input type="button" id="retry_button" value="again!">
+			</div>
+
+		</div>
+	</body>
+	<div id="bottom">
+			<div id="fact_holder">
+				<span id="last_question_fact">
+				</span>
+			</div>
+		</div>
+	</div>
+</html>
