@@ -82,7 +82,7 @@ $(document).ready(function() {
             $(".question").remove(); /* removes question just answered */
             $("#answer_holder input").remove();  /* removes the radio button input */
             $("#answer_holder span").remove();  /* removes the span tag which contained the possible answers */
-			$("#last_question_fact").fadeOut(); /* fades out the last question's fact*/
+			$("#last_question_fact").fadeOut(7000); /* fades out the last question's fact*/
             $("#submit").css("display", "none"); /* hides the submit button */
             $("#retry_button").css("display", "inline"); /* displays the 'play again' button */
             var lastFact= questions[currentQuestion-1].fact;  /* creates a variable 'lastfact' and sets it to the fact of the previous question*/
