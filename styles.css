@@ -42,6 +42,7 @@ table {
 body {
 	font-family: sans-serif;
 	line-height: 1;
+
 }
 /*fonts*/
 @font-face {
@@ -57,6 +58,8 @@ html {
 	margin-top: 30px;
 }
 /*elements*/
+
+
 h1 {
 	font-family: 'Exo', sans-serif;
 	font-size: 100px;
@@ -169,7 +172,7 @@ h2 {
 	text-align:center;
 	margin-top: 25px;
 
-	
+
 	/*font-size: 18px;
 	margin-top: 20px;
 	border-radius: 5px;*/

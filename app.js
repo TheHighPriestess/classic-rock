@@ -40,8 +40,8 @@ $(document).ready(function() {
     var numberCorrect = 0;
     var currentQuestion = 0;
     
-    $("#question_wrapper").on("click", "#submit", function () {
-        updateCup();
+    $("#question_wrapper").on("click", "#submit", function () {   
+        countCorrectQuestions();
         currentQuestion++;
         nextQuestion();
     });
@@ -56,59 +56,44 @@ $(document).ready(function() {
         $("#last_question_fact").html("");
     });
 
-    function updateCup() {
+    function countCorrectQuestions() {
         var answer = $("input[type='radio']:checked").val();
         if (answer == questions[currentQuestion].correct) {
             numberCorrect++;    
-        }
-        if (numberCorrect == 1) {
-            $(".score_cup").css("display", "none")
-            $("#score_cup1").fadeIn();
-        }
-        else if (numberCorrect == 2) {
-            $(".score_cup").css("display", "none")
-            $("#score_cup2").fadeIn();
-        }
-        else if (numberCorrect == 3) {
-            $(".score_cup").css("display", "none")
-            $("#score_cup3").fadeIn();
-        }
-        else if (numberCorrect == 4) {
-            $(".score_cup").css("display", "none")
-            $("#score_cup4").fadeIn();
-        }
-        else if (numberCorrect == 5) {
-            $(".score_cup").css("display", "none")
-            $("#score_cup5").fadeIn();
         }
     }
 
     function nextQuestion() {
         if (currentQuestion < 5) {
-            $(".question").remove();
-            $("#answer_holder input").remove();
-            $("#answer_holder span").remove();
-			$("#last_question_fact").hide();
+            $(".question").remove(); /* removes question just answered */
+            $("#answer_holder input").remove(); /* removes the radio button input */
+            $("#answer_holder span").remove(); /* removes the span tag which contained the possible answers */
+			$("#last_question_fact").hide(); /* hides the last question's fact*/
+
+            /* creates a new question from the array 'questions' using the current value of 'currentQuestion'*/
+            /* as the index value and 'question' */
             var newQuestion = '<span class="question">'+questions[currentQuestion].question+'</span><br><div id="answer_holder"><input type="radio" name="option" class="option" value="0"><span class="answer">'+questions[currentQuestion].choices[0]+'</span><br><input type="radio" name="option" class="option" value="1"><span class="answer">'+questions[currentQuestion].choices[1]+'</span><br><input type="radio" name="option" class="option" value="2"><span class="answer">'+questions[currentQuestion].choices[2]+'</span><br><input type="radio" name="option" class="option" value="3"><span class="answer">'+questions[currentQuestion].choices[3]+'</span><br></div><div id="button_holder"><input type="button" id="submit" value="submit"><span id="hint"></span><input type="button" id="retry_button" value="again!"></div>';
-            $("#question_wrapper").html(newQuestion);
-            var lastFact= questions[currentQuestion-1].fact;
-            $("#last_question_fact").html(lastFact).fadeIn();
+            
+
+            $("#question_wrapper").html(newQuestion);  /* Places the next question into the question_wrapper */
+            var lastFact= questions[currentQuestion-1].fact;  /* creates a variable 'lastfact' and sets it to the fact of the previous question*/
+            $("#last_question_fact").html(lastFact).fadeIn(); /* fades that fact in */
         }
         else {
-            $(".question").remove();
-            $("#answer_holder input").remove();
-            $("#answer_holder span").remove();
-			$("#last_question_fact").fadeOut();
-            $("#submit").css("display", "none");
-            $("#retry_button").css("display", "inline");
-            var lastFact= questions[currentQuestion-1].fact;
-            $("#last_question_fact").html(lastFact);
-            if (numberCorrect == 1) {
+            $(".question").remove(); /* removes question just answered */
+            $("#answer_holder input").remove();  /* removes the radio button input */
+            $("#answer_holder span").remove();  /* removes the span tag which contained the possible answers */
+			$("#last_question_fact").fadeOut(); /* fades out the last question's fact*/
+            $("#submit").css("display", "none"); /* hides the submit button */
+            $("#retry_button").css("display", "inline"); /* displays the 'play again' button */
+            var lastFact= questions[currentQuestion-1].fact;  /* creates a variable 'lastfact' and sets it to the fact of the previous question*/
+            $("#last_question_fact").html(lastFact); /* displays that fact */
+            if (numberCorrect > 3) {
                 var finalScore = '<span id="final">Congratulations on finishing the quiz!  You correctly answered '+numberCorrect+' question.'
                 $("#answer_holder").html(finalScore);
             }
             else {
-                var finalScore = '<span id="final">Congratulations on finishing the quiz!  You correctly answered '+numberCorrect+' questions.'
+                var finalScore = '<span id="final">Hmmmm.  You correctly answered '+numberCorrect+' questions.'
                 $("#answer_holder").html(finalScore);
             }
         }
