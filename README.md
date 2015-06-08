@@ -1,6 +1,4 @@
 classic-rock
 ============
 
-Take the challenge! 
-
-http://thehighpriestess.github.io/classic-rock/
+Multiple-choice classic rock quiz.  Provides feedback after each answer and a total score at the end.
